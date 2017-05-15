@@ -48,6 +48,8 @@ export class OrderServiceController implements angular.IController {
     this.ctrl.longDescription = this.ctrl.serviceClass.longDescription;
     this.ctrl.plans = _.get(this, 'ctrl.serviceClass.resource.plans', []);
     this.ctrl.applications = [];
+    this.ctrl.parameterData = {};
+    this.ctrl.forms = {};
 
     // Preselect the first plan. If there's only one plan, skip the wizard step.
     this.ctrl.selectedPlan = _.first(this.ctrl.plans);
@@ -161,6 +163,8 @@ export class OrderServiceController implements angular.IController {
 
   public selectPlan(plan: any) {
     this.ctrl.selectedPlan = plan;
+    // Clear any previous parameter data since each plan has its own parameter schema.
+    this.ctrl.parameterData = {};
   }
 
   public provisionService = () => {
@@ -337,7 +341,8 @@ export class OrderServiceController implements angular.IController {
        },
        spec: {
          serviceClassName: serviceClassName,
-         planName: this.ctrl.selectedPlan.name
+         planName: this.ctrl.selectedPlan.name,
+         parameters: this.ctrl.parameterData
        }
     };
 
