@@ -18,7 +18,7 @@
           <span class="sr-only">Help</span>
           <span class="caret" aria-hidden="true"></span>
         </a>
-        <ul class="uib-dropdown-menu ng-isolate-scope dropdown-menu" aria-labelledby="help-dropdown" extension-point="" extension-name="nav-help-dropdown" extension-types="dom html">
+        <ul uib-dropdown-menu class="ng-isolate-scope dropdown-menu" aria-labelledby="help-dropdown" extension-point="" extension-name="nav-help-dropdown" extension-types="dom html">
           <li class="ng-scope">
             <a href="" ng-click="$ctrl.startTour()">
               Home Page Tour
@@ -32,7 +32,7 @@
           <span class="pf-icon pficon-user" aria-hidden="true"></span>
           <span class="username truncate">{{$ctrl.user.fullName || $ctrl.user.metadata.name}}</span> <span class="caret" aria-hidden="true"></span>
         </a>
-        <ul class="uib-dropdown-menu"
+        <ul uib-dropdown-menu
             aria-labelledby="user-dropdown"
             extension-point
             extension-name="nav-user-dropdown"
