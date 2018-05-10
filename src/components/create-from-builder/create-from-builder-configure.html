@@ -63,7 +63,7 @@
               </div>
               <div class="has-error" ng-show="$ctrl.builderForm.name.$error.maxlength">
                 <span class="help-block">
-                  Application name can't be more than 24 characters.
+                  Application name can't be more than {{$ctrl.nameMaxLength}} characters.
                 </span>
               </div>
             </div>
